@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Modelos\web\Empresa;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -27,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -62,13 +63,23 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $empresa = new Empresa();
+        $empresa -> nombre = $data['nombre_empresa'];
+        $empresa -> direccion = $data['direccion_empresa'];
+        $empresa -> telefono = $data['telefono_empresa'];
+        $empresa -> email = $data['email_empresa'];
+        $empresa -> save();
+
         return User::create([
-            'empresa' => $data['empresa'],
             'name' => $data['name'],
+            'apellido' => $data['apellido'],
             'direccion' => $data['direccion'],
             'telefono' => $data['telefono'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'tipo' => 'administrador',
+            'visible' => '1',
+            'empresa_id' => $empresa -> id,
         ]);
     }
 }

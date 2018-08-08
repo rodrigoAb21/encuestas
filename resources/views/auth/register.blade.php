@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Distribuidos</title>
+    <title>Distribuidos | Registro</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="{{asset('plantilla/dist/img/logo.png')}}" type="image/x-icon">
 
 </head>
-<body class="hold-transition login-page" style="font-family: 'Tahoma'">
+<body class="hold-transition login-page" style="font-family: Tahoma, Verdana, Arial, sans-serif">
 @if (count($errors)>0)
     <div class="alert alert-danger">
         <ul>
@@ -29,20 +29,40 @@
 @endif
 <div class="register-box">
     <div class="login-logo">
-        <h1>Distribuidos</h1>
+        <h1>REGISTRO</h1>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <h4 class="login-box-msg">REGISTRO</h4>
 
         <form method="POST" action="{{ route('register') }}" autocomplete="off">
             {{ csrf_field() }}
+
+            <h3 class="login-box-msg">Datos de la Empresa</h3>
+
             <div class="form-group form-group-lg">
-                <input type="text" class="form-control" placeholder="Empresa" name="empresa" value="{{ old('empresa') }}" required autofocus>
+                <input type="text" class="form-control" placeholder="Nombre" name="nombre_empresa" value="{{ old('nombre_empresa') }}" required autofocus>
+            </div>
+
+            <div class="form-group  form-group-lg">
+                <input type="text" class="form-control" placeholder="Direccion" name="direccion_empresa" value="{{ old('direccion_empresa') }}" required>
             </div>
 
             <div class="form-group form-group-lg">
-                <input type="text" class="form-control" placeholder="Nombre de Usuario" name="name" value="{{ old('name') }}" required>
+                <input type="number" class="form-control" placeholder="Telefono" name="telefono_empresa" value="{{ old('telefono_empresa') }}" >
+            </div>
+
+            <div class="form-group form-group-lg">
+                <input type="email" class="form-control" placeholder="Email" name="email_empresa" value="{{ old('email_empresa') }}" >
+            </div>
+
+            <h3 class="login-box-msg">Datos del Usuario</h3>
+
+            <div class="form-group form-group-lg">
+                <input type="text" class="form-control" placeholder="Nombres" name="name" value="{{ old('name') }}" required>
+            </div>
+
+            <div class="form-group form-group-lg">
+                <input type="text" class="form-control" placeholder="Apellidos" name="apellido" value="{{ old('apellido') }}" required>
             </div>
 
             <div class="form-group  form-group-lg">

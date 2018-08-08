@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="{{asset('plantilla/dist/img/logo.png')}}" type="image/x-icon">
 
 </head>
-<body class="hold-transition login-page" style="font-family: 'Tahoma'">
+<body class="hold-transition login-page" style="font-family: Tahoma, Verdana, Arial, sans-serif">
 @if (count($errors)>0)
     <div class="alert alert-danger">
         <ul>

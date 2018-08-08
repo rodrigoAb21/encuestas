@@ -21,12 +21,12 @@
     <link rel="shortcut icon" href="{{asset('plantilla/dist/img/logo.png')}}" type="image/x-icon">
 
 </head>
-<body class="hold-transition skin-black-light sidebar-mini" style="font-family: 'Tahoma'">
+<body class="hold-transition skin-black-light sidebar-mini" style="font-family: Tahoma, Verdana, Arial, sans-serif">
 <div class="wrapper">
 
     <header class="main-header">
         <!-- Logo -->
-        <a href="index2.html" class="logo">
+        <a href="{{url('/')}}" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><i class="fa fa-laptop"></i></span>
             <!-- logo for regular state and mobile devices -->
@@ -108,7 +108,7 @@
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">MAIN NAVIGATION</li>
-                <li><a href=""><i class="fa fa-user"></i> <span>Empleados</span></a></li>
+                <li><a href="{{url('encuestadores')}}"><i class="fa fa-user"></i> <span>Encuestadores</span></a></li>
                 <li><a href=""><i class="fa fa-file-text"></i> <span>Encuestas</span></a></li>
                 <li><a href=""><i class="fa fa-map-o"></i> <span>Zonas</span></a></li>
                 <li><a href=""><i class="fa fa-pie-chart"></i> <span>Reportes</span></a></li>
